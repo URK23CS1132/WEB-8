@@ -30,3 +30,9 @@ app.get("*", function (req, res) {
 app.listen(PORT, function () {
   console.log("Server running successfully");
 });
+.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
